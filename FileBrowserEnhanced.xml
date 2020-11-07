@@ -7,13 +7,13 @@
   <Description>
     [b][u][span style='color: #E80000;']Description[/span][/u][/b][br]
     FileBrowser 针对一个特定目录提供了文件管理界面，支持文件的上传、删除、预览、重命名和编辑，同时支持了多用户操作。FileBrowserEnhanced 是荒野無燈大佬对 FileBrowser 二次开发的增强版，在原来的基础上增加了更多的实用功能，比如在网页上右键获取文件的 MediaInfo、制作种子、生成缩略图、解压等等[br][br]
-    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b][u][span style='color: #E80000;']配置说明[/span][/u][/b][br]
     [b]/config[/b]: 容器中映射 FileBrowserEnhanced 配置文件的目录，包括数据库、运行配置、ssl 证书等[br]
     [b]/myfiles[/b]: 容器中映射 FileBrowserEnhanced 接管的文件目录，也就是通过 Web 访问时的根目录[br][br]
     [b][u][span style='color: #E80000;']启用硬件加速[/span][/u][/b][br]
     修改 go 启动配置增加该命令: modprobe i915[br]
     保存后重启，然后添加该配置到高级视图中的额外参数：--device=/dev/dri[br][br]
-    [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
     https://hub.docker.com/r/80x86/filebrowser/[br][br]
   </Description>
   <Overview>
@@ -50,6 +50,9 @@
   <Config Name="需要通过 FBE 管理的目录" Target="/myfiles" Default="" 
     Mode="rw" Description="该目录将映射到容器中的 /myfiles" Type="Path" 
     Display="always" Required="false" Mask="false">/mnt/user</Config>
+  <Config Name="AppData 配置路径" Target="/config" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 FBE 配置" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/FileBrowserEnhanced</Config>
   <WebUI>http://[IP]:[PORT:8082]/</WebUI>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/fbe-icon.png</Icon>
   <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
