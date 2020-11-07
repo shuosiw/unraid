@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/FileBrowserEnhanced.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>FileBrowserEnhanced</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']Description[/span][/u][/b][br]
+    FileBrowser 针对一个特定目录提供了文件管理界面，支持文件的上传、删除、预览、重命名和编辑，同时支持了多用户操作。FileBrowserEnhanced 是荒野無燈大佬对 FileBrowser 二次开发的增强版，在原来的基础上增加了更多的实用功能，比如在网页上右键获取文件的 MediaInfo、制作种子、生成缩略图、解压等等[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/config[/b] 容器中映射 FileBrowserEnhanced 配置文件的目录，包括数据库、运行配置、ssl 证书等[br]
+    [b]/myfiles[/b] 容器中映射 FileBrowserEnhanced 接管的文件目录，也就是通过 Web 访问时的根目录[br][br]
+    [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
+    https://github.com/binhex/documentation[br][br]
+  </Description>
+  <Overview>
+    FileBrowser 针对一个特定目录提供了文件管理界面，支持文件的上传、删除、预览、重命名和编辑，同时支持了多用户操作。FileBrowserEnhanced 是荒野無燈大佬对 FileBrowser 二次开发的增强版，在原来的基础上增加了更多的实用功能，比如在网页上右键获取文件的 MediaInfo、制作种子、生成缩略图、解压等等
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://registry.hub.docker.com/r/80x86/filebrowser/</Registry>
+  <GitHub>https://github.com/ttys3/filebrowser</GitHub>
+  <Repository>80x86/filebrowser:amd64</Repository>
+  <Project>https://ttys3.net/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>SSL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK_SET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8082</Value>
+      <Name>WEB_PORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/filebrowser</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/myfiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8082]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/fbe-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
