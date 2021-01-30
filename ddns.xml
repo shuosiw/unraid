@@ -6,7 +6,22 @@
   <Name>ddns</Name>
   <Description>
     [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
-    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。[br][br]
+    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。[br]
+    使用前需要先手动准备好 /mnt/user/appdata/ddns/config.json 配置文件（因目前 ddns 不支持从环境变量获取配置）。[br]
+    配置文件说明：https://github.com/NewFuture/DDNS#%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%A1%A8 [br][br]
+    [pre]{
+      "$schema": "https://ddns.newfuture.cc/schema/v2.8.json",
+      "id": "12345",
+      "token": "mytokenkey",
+      "dns": "dnspod 或 dnspod_com 或 alidns 或 dnscom 或 cloudflare 或 he 或 huaweidns 或 callback",
+      "ipv4": ["ddns.newfuture.cc", "ipv4.ddns.newfuture.cc"],
+      "ipv6": ["ddns.newfuture.cc", "ipv6.ddns.newfuture.cc"],
+      "index4": 0,
+      "index6": "public",
+      "ttl": 600,
+      "proxy": "127.0.0.1:1080;DIRECT",
+      "debug": false
+}[/pre][br][br]
     [b][u][span style='color: #E80000;']配置说明[/span][/u][/b][br]
     [b]/config.json[/b]: 容器中 ddns 进程的配置文件 [br][br]
     [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
@@ -31,7 +46,7 @@
     Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
     Display="always" Required="false" Mask="false">100</Config>
   <Config Name="AppData 配置路径" Target="/config.json" Default="" 
-    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 FBE 配置" Type="Path" 
+    Mode="rw" Description="ddns 的配置文件，映射到容器中 /config.json" Type="Path"
     Display="always" Required="false" Mask="false">/mnt/user/appdata/ddns/config.json</Config>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/ddns-icon.png</Icon>
   <WebUI></WebUI>
