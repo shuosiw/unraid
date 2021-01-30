@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/ddns.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>FileBrowserEnhanced</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。[br][br]
+    [b][u][span style='color: #E80000;']配置说明[/span][/u][/b][br]
+    [b]/config.json[/b]: 容器中 ddns 进程的配置文件 [br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/NewFuture/DDNS[br][br]
+  </Description>
+  <Overview>
+    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://registry.hub.docker.com/r/newfuture/ddns</Registry>
+  <GitHub>https://github.com/NewFuture/DDNS</GitHub>
+  <Repository>newfuture/ddns:latest</Repository>
+  <Project>https://ddns.newfuture.cc/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>host</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="AppData 配置路径" Target="/config.json" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 FBE 配置" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ddns/config.json</Config>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/ddns-icon.png</Icon>
+  <WebUI></WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
