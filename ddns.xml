@@ -3,7 +3,7 @@
   <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/ddns.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>Cloud: Network:Web Tools:</Category>
-  <Name>FileBrowserEnhanced</Name>
+  <Name>ddns</Name>
   <Description>
     [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
     ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。[br][br]
@@ -43,3 +43,4 @@
   <DonateLink></DonateLink>
   <DonateImg></DonateImg>
 </Container>
+
