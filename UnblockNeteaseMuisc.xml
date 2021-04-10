@@ -3,7 +3,7 @@
   <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/UnblockNeteaseMuisc.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>Cloud: Network:Web Tools:</Category>
-  <Name>ddns</Name>
+  <Name>UnblockNeteaseMuisc</Name>
   <Description>
     [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
     解锁网易云音乐客户端变灰歌曲 (Golang)[br]
@@ -22,10 +22,10 @@
   <Network>br0</Network>
   <Shell>sh</Shell>
   <Config Name="用户 ID" Target="PUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户" Type="Variable" 
     Display="always" Required="false" Mask="false">99</Config>
   <Config Name="用户组 ID" Target="GUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户组" Type="Variable" 
     Display="always" Required="false" Mask="false">100</Config>
   <Config Name="强制最高音质" Target="UNM_FORCE_BEST" Default="on|off" 
     Mode="" Description="是否强制最高音质" Type="Variable" 
