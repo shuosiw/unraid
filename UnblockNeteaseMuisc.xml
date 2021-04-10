@@ -45,7 +45,7 @@
   <Config Name="https 端口" Target="UNM_SERVER_TLS_PORT" Default="" 
     Mode="" Description="设置 https 运行端口，默认为 443" Type="Variable" 
     Display="always" Required="false" Mask="false">443</Config>
-  <Config Name="尝试搜索次数" Target="UNM_SERVER_TLS_PORT" Default="0|1|2|3" 
+  <Config Name="尝试搜索次数" Target="UNM_SEARCH_TIME" Default="0|1|2|3" 
     Mode="" Description="从其他平台尝试搜索歌曲的次数，默认为 1 次" Type="Variable" 
     Display="always" Required="false" Mask="false">1</Config>
   <Config Name="自定义证书文件" Target="UNM_SERVER_CERT" Default="" 
@@ -57,7 +57,7 @@
   <Config Name="日志文件路径" Target="UNM_LOG_FILE" Default="" 
     Mode="" Description="设置日志文件路径，并将日志写入文件（不推荐）" Type="Variable" 
     Display="always" Required="false" Mask="false"></Config>
-  <Icon>https://github.com/shuosiw/unraid/raw/master/images/unblcok-netease-music.png</Icon>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/unblock-netease-music.png</Icon>
   <WebUI></WebUI>
   <ExtraParams></ExtraParams>
   <PostArgs></PostArgs>
