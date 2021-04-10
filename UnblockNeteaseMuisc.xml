@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/UnblockNeteaseMuisc.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>ddns</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    解锁网易云音乐客户端变灰歌曲 (Golang)[br]
+    可通过设置环境变量来配置，详见：https://github.com/shuosiw/unblock-netease-music [br][br]
+  </Description>
+  <Overview>
+    解锁网易云音乐客户端变灰歌曲 (Golang)
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://registry.hub.docker.com/r/shuosiw/unblock-netease-music</Registry>
+  <GitHub>https://github.com/cnsilvan/UnblockNeteaseMusic</GitHub>
+  <Repository>shuosiw/unblock-netease-music</Repository>
+  <Project>shuosiw/unblock-netease-music</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>br0</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="强制最高音质" Target="UNM_FORCE_BEST" Default="on|off" 
+    Mode="" Description="是否强制最高音质" Type="Variable" 
+    Display="always" Required="false" Mask="false">on</Config>
+  <Config Name="替换音乐链接" Target="UNM_REPLACE_URL" Default="on|off" 
+    Mode="" Description="是否替换音乐链接" Type="Variable" 
+    Display="always" Required="false" Mask="false">off</Config>
+  <Config Name="设置音源" Target="UNM_SERVER_SOURCE" Default="kuwo|migu|kugou" 
+    Mode="" Description="设置替换的音源" Type="Variable" 
+    Display="always" Required="false" Mask="false">kuwo</Config>
+  <Config Name="运行模式" Target="UNM_RUNNING_MODE" Default="1|2" 
+    Mode="" Description="设置运行模式：1 为 hosts 替换； 2 为 proxy 模式" Type="Variable" 
+    Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="http 端口" Target="UNM_SERVER_PORT" Default="" 
+    Mode="" Description="设置 http 运行端口，默认为 80" Type="Variable" 
+    Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="https 端口" Target="UNM_SERVER_TLS_PORT" Default="" 
+    Mode="" Description="设置 https 运行端口，默认为 443" Type="Variable" 
+    Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="尝试搜索次数" Target="UNM_SERVER_TLS_PORT" Default="0|1|2|3" 
+    Mode="" Description="从其他平台尝试搜索歌曲的次数，默认为 1 次" Type="Variable" 
+    Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="自定义证书文件" Target="UNM_SERVER_CERT" Default="" 
+    Mode="" Description="指定自定义证书文件在容器中的绝对路径，需提前挂载至容器" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="自定义证书 Key 文件" Target="UNM_SERVER_KEY" Default="" 
+    Mode="" Description="指定自定义证书 Key 文件在容器中的绝对路径，需提前挂载至容器" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="日志文件路径" Target="UNM_LOG_FILE" Default="" 
+    Mode="" Description="设置日志文件路径，并将日志写入文件（不推荐）" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/unblcok-netease-music.png</Icon>
+  <WebUI></WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
+
