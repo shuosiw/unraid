@@ -6,8 +6,10 @@
   <Name>IYUUPlus</Name>
   <Description>
     [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
-    IYUUPlus 是 IYUUAutoReseed 项目的升级版，常驻内存运行；集成 webui 界面、辅种、转移、下载、定时访问 URL、动态域名 ddns 等常用功能，提供完善的插件机制。[br]
-    IYUU 自动辅种工具，目前能对国内大部分的 PT 站点自动辅种，支持下载器集群，支持多盘位，支持多下载目录，支持远程连接等。[br][br]
+    IYUUPlus 是 IYUUAutoReseed 项目的升级版，常驻内存运行；[br]
+    集成 webui 界面、辅种、转移、下载、定时访问 URL、动态域名 ddns 等常用功能，提供完善的插件机制。[br][br]
+    IYUU 自动辅种工具，目前能对国内大部分的 PT 站点自动辅种，[br]
+    支持下载器集群，支持多盘位，支持多下载目录，支持远程连接等。[br][br]
     [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
     https://github.com/ledccn/IYUUPlus[br][br]
   </Description>
@@ -24,13 +26,13 @@
   <Network>br0</Network>
   <Shell>sh</Shell>
   <Config Name="用户 ID" Target="PUID" Default="" 
-    Mode="" Description="运行 FBE 容器的用户" Type="Variable" 
+    Mode="" Description="运行 IYUUPlus 容器的用户" Type="Variable" 
     Display="always" Required="false" Mask="false">99</Config>
   <Config Name="用户组 ID" Target="GUID" Default="" 
-    Mode="" Description="运行 FBE 容器的用户组" Type="Variable" 
+    Mode="" Description="运行 IYUUPlus 容器的用户组" Type="Variable" 
     Display="always" Required="false" Mask="false">100</Config>
   <Config Name="WebUI 端口" Target="8787" Default="8787" 
-    Mode="tcp" Description="WebUI 端口"  Type="Port" 
+    Mode="tcp" Description="WebUI 端口，对应容器中的 8787 端口"  Type="Port" 
     Display="always" Required="true" Mask="false">8787</Config>
   <Config Name="AppData 配置路径" Target="/IYUU/db" Default="" 
     Mode="rw" Description="该目录将映射到容器中的 /IYUU/db，用于持久化存储 IYUUPlus 配置" Type="Path" 
