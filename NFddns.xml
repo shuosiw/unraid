@@ -54,7 +54,7 @@
     Display="always" Required="false" Mask="false">600</Config>
   <Config Name="NFD_PROXY" Target="NFD_PROXY" Default="" 
     Mode="" Description="是否设置代理，比如 127.0.0.1:1080;DIRECT" Type="Variable" 
-    Display="always" Required="false" Mask="false"></Config
+    Display="always" Required="false" Mask="false"></Config>
   <Config Name="NFD_DEBUG" Target="NFD_DEBUG" Default="" 
     Mode="" Description="是否启用 debug 模式" Type="Variable" 
     Display="always" Required="false" Mask="false">false</Config>
@@ -74,4 +74,3 @@
   <DonateLink></DonateLink>
   <DonateImg></DonateImg>
 </Container>
-
