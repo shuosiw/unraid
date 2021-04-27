@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/NFddns.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>NFddns</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/shuosiw/NFddns[br][br]
+  </Description>
+  <Overview>
+    ddns 自动更新 DNS 解析到本机 IP 地址，支持 ipv4 和 ipv6，支持本地(内网) IP 和公网 IP，支持代理，支持自动创建域名记录。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://registry.hub.docker.com/r/shuosiw/nfddns</Registry>
+  <GitHub>https://github.com/shuosiw/NFddns</GitHub>
+  <Repository>shuosiw/nfddns:latest</Repository>
+  <Project>https://ddns.newfuture.cc/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>host</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="api 访问 ID" Target="NFD_ID" Default="" 
+    Mode="" Description="比如 dnspod 为 AccessKeyId，Cloudflare 为邮箱(使用 Token 时留空)，HE.net 可留空" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="api 授权 token" Target="NFD_TOKEN" Default="" 
+    Mode="" Description="比如 dnspod 为 AccessKeySecret，部分平台叫 secret key" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="dns 服务商" Target="NFD_DNS" Default="alidns|cloudflare|dnscom|dnspod|dnspod_com|he|huaweidns" 
+    Mode="" Description="使用的 dns 服务商" Type="Variable" 
+    Display="always" Required="false" Mask="false">dnspod</Config>
+  <Config Name="ipv4 域名列表" Target="NFD_IPV4" Default="" 
+    Mode="" Description="需要进行 ddns 的 ipv4 域名，多个域名请用英文逗号分隔，留空表示不进行 ipv4 DDNS" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ipv6 域名列表" Target="NFD_IPV6" Default="" 
+    Mode="" Description="需要进行 ddns 的 ipv6 域名，多个域名请用英文逗号分隔，留空表示不进行 ipv6 DDNS" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ipv4 获取方式" Target="NFD_INDEX4" Default="" 
+    Mode="" Description="public 使用公网 IP、interface 指定特定网卡、url:xxx 打开 xxx URL 从返回数据获取 IP，更多信息见：https://github.com/shuosiw/NFddns" Type="Variable" 
+    Display="always" Required="false" Mask="false">public</Config>
+  <Config Name="ipv6 获取方式" Target="NFD_INDEX6" Default="" 
+    Mode="" Description="public 使用公网 IP、interface 指定特定网卡、url:xxx 打开 xxx URL 从返回数据获取 IP，更多信息见：https://github.com/shuosiw/NFddns" Type="Variable" 
+    Display="always" Required="false" Mask="false">public</Config>
+  <Config Name="NFD_TTL" Target="NFD_TTL" Default="" 
+    Mode="" Description="设置域名的 TTL，不能小于 DNS 服务商限制 TTL 最小值" Type="Variable" 
+    Display="always" Required="false" Mask="false">600</Config>
+  <Config Name="NFD_PROXY" Target="NFD_PROXY" Default="" 
+    Mode="" Description="是否设置代理，比如 127.0.0.1:1080;DIRECT" Type="Variable" 
+    Display="always" Required="false" Mask="false"></Config
+  <Config Name="NFD_DEBUG" Target="NFD_DEBUG" Default="" 
+    Mode="" Description="是否启用 debug 模式" Type="Variable" 
+    Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="NFD_CACHE" Target="NFD_CACHE" Default="" 
+    Mode="" Description="是否缓存记录，建议打开以避免频繁更新" Type="Variable" 
+    Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="NFD_INTERVALS" Target="NFD_INTERVALS" Default="" 
+    Mode="" Description="运行 ddns 的间隔，限制 1-60" Type="Variable" 
+    Display="always" Required="false" Mask="false">5</Config>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/ddns-icon.png</Icon>
+  <WebUI></WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
+
