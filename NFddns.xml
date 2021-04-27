@@ -22,12 +22,6 @@
   <Privileged>false</Privileged>
   <Network>host</Network>
   <Shell>sh</Shell>
-  <Config Name="用户 ID" Target="PUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
-    Display="always" Required="false" Mask="false">99</Config>
-  <Config Name="用户组 ID" Target="GUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
-    Display="always" Required="false" Mask="false">100</Config>
   <Config Name="api 访问 ID" Target="NFD_ID" Default="" 
     Mode="" Description="比如 dnspod 为 AccessKeyId，Cloudflare 为邮箱(使用 Token 时留空)，HE.net 可留空" Type="Variable" 
     Display="always" Required="false" Mask="false"></Config>
@@ -54,16 +48,22 @@
     Display="always" Required="false" Mask="false">600</Config>
   <Config Name="NFD_PROXY" Target="NFD_PROXY" Default="" 
     Mode="" Description="是否设置代理，比如 127.0.0.1:1080;DIRECT" Type="Variable" 
-    Display="always" Required="false" Mask="false"></Config>
+    Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="NFD_DEBUG" Target="NFD_DEBUG" Default="" 
     Mode="" Description="是否启用 debug 模式" Type="Variable" 
-    Display="always" Required="false" Mask="false">false</Config>
+    Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="NFD_CACHE" Target="NFD_CACHE" Default="" 
     Mode="" Description="是否缓存记录，建议打开以避免频繁更新" Type="Variable" 
-    Display="always" Required="false" Mask="false">true</Config>
+    Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="NFD_INTERVALS" Target="NFD_INTERVALS" Default="" 
     Mode="" Description="运行 ddns 的间隔，限制 1-60" Type="Variable" 
     Display="always" Required="false" Mask="false">5</Config>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">100</Config>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/ddns-icon.png</Icon>
   <WebUI></WebUI>
   <ExtraParams></ExtraParams>
