@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/qiandao.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>QianDao</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    签到（QianDao） —— 一个自动签到框架 base on an HAR editor[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/AragonSnow/qiandao[br][br]
+  </Description>
+  <Overview>
+    签到（QianDao） —— 一个自动签到框架 base on an HAR editor，支持 server 酱、bark 推送，WXPusher 和推送开关。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/asdaragon/qiandao</Registry>
+  <GitHub>https://github.com/AragonSnow/qiandao</GitHub>
+  <Repository>asdaragon/qiandao:latest</Repository>
+  <Project>https://github.com/AragonSnow/qiandao</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="WebUI 端口" Target="80" Default="" 
+    Mode="tcp" Description="WebUI 端口，对应容器中的 80 端口"  Type="Port" 
+    Display="always" Required="true" Mask="false">12345</Config>
+  <Config Name="AppData 配置路径" Target="/usr/src/app/config" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /usr/src/app/config，用于持久化存储 QianDao 配置" Type="Path" 
+    Display="advanced" Required="false" Mask="false">/mnt/user/appdata/qiandao</Config>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <WebUI>http://[IP]:[PORT:12345]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/qiandao-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
