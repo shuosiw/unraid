@@ -26,18 +26,21 @@
   <Config Name="WebUI 端口" Target="8886" Default="" 
     Mode="tcp" Description="WebUI 端口，对应容器中的 8886 端口"  Type="Port" 
     Display="always" Required="true" Mask="false">8886</Config>
+  <Config Name="数据同步路径" Target="/mnt" Default="" 
+    Mode="rw" Description="挂载到容器 /mnt 目录，用于保存同步文件数据" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/verysync</Config>
   <Config Name="公共中继端口" Target="3000" Default="" 
     Mode="tcp" Description="默认公共中继端口，对应容器中 3000 端口"  Type="Port" 
-    Display="always" Required="true" Mask="false">3000</Config>
+    Display="advanced" Required="true" Mask="false">3000</Config>
   <Config Name="数据传输端口" Target="22330" Default="" 
     Mode="tcp" Description="数据传输端口，对应容器中的 22330 端口"  Type="Port" 
-    Display="always" Required="true" Mask="false">22330</Config>
+    Display="advanced" Required="true" Mask="false">22330</Config>
   <Config Name="内网 UDP 发现端口" Target="22027" Default="" 
     Mode="udp" Description="内网 UDP 发现端口，对应容器中 22027 端口"  Type="Port" 
-    Display="always" Required="true" Mask="false">22027</Config>
+    Display="advanced" Required="true" Mask="false">22027</Config>
   <Config Name="内网 UDP 发现端口" Target="22037" Default="" 
     Mode="udp" Description="内网 UDP 发现端口，对应容器中 22037 端口"  Type="Port" 
-    Display="always" Required="true" Mask="false">22037</Config>
+    Display="advanced" Required="true" Mask="false">22037</Config>
   <Config Name="AppData 配置路径" Target="/data" Default="" 
     Mode="rw" Description="该目录将映射到容器中的 /data，用于持久化存储 VerySync 配置" Type="Path" 
     Display="advanced" Required="false" Mask="false">/mnt/user/appdata/verysync</Config>
