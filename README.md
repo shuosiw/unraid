@@ -10,6 +10,9 @@ UnRaid docker 模板库，目前支持的容器：
 |NFddns|动态域名解析|支持多家 DNS 的双栈解析|
 |QianDao| 自动签到框架| 基于 Har，且支持推送|
 |UnblockNeteaseMuisc|解锁网易云音乐灰色歌曲|Golang 版本|
+|PThelper|PT 小助手|自动刷流与签到|
+|VerySync|微力同步|在多个设备上同步文件|
+|JD| JD 活动签到|自动玩耍 JD 的各种游戏|
 
 原则上仅添加 UnRaid 的 APP 社区中没有提供的容器，逐步适配ing
 
