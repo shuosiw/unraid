@@ -25,9 +25,6 @@
   <Config Name="是否启用挂机" Target="ENABLE_HANGUP" Default="false|true"
     Mode="" Description="是否启用挂机" Type="Variable"
     Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="是否启用 TG BOT" Target="ENABLE_TG_BOT" Default="false|true"
-    Mode="" Description="是否启用 TG BOT" Type="Variable"
-    Display="always" Required="false" Mask="false">false</Config>
   <Config Name="own 脚本目录" Target="/jd/own" Default=""
     Mode="rw" Description="该目录将映射到容器中的 /jd/own" Type="Path"
     Display="always" Required="false" Mask="false">/mnt/user/appdata/jd/own</Config>
