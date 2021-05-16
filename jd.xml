@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/jd.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>JD</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    自动玩耍京东的各种游戏，主要有：各种签到、东东农场、种豆得豆、天天加速、摇钱树、宠汪汪、东东萌宠、京小超，获取各种小羊毛。[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://hub.docker.com/r/nevinee/jd[br][br]
+  </Description>
+  <Overview>
+    自动玩耍京东的各种游戏
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/nevinee/jd</Registry>
+  <GitHub>https://github.com/shuosiw/unraid</GitHub>
+  <Repository>nevinee/jd:v4</Repository>
+  <Project>https://hub.docker.com/r/nevinee/jd</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="是否启用挂机" Target="ENABLE_HANGUP" Default="false|true"
+    Mode="" Description="是否启用挂机" Type="Variable"
+    Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="是否启用 TG BOT" Target="ENABLE_TG_BOT" Default="false|true"
+    Mode="" Description="是否启用 TG BOT" Type="Variable"
+    Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="own 脚本目录" Target="/jd/own" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /jd/own" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/jd/own</Config>
+  <Config Name="config 配置文件目录" Target="/jd/config" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /jd/config" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/jd/config</Config>
+  <Config Name="日志目录" Target="/jd/log" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /jd/log" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/jd/log</Config>
+  <Config Name="用户 ID" Target="PUID" Default=""
+    Mode="" Description="运行 jd 容器的用户" Type="Variable"
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default=""
+    Mode="" Description="运行 jd 容器的用户组" Type="Variable"
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="面板 WebUI 端口" Target="5678" Default=""
+    Mode="tcp" Description="该镜像默认不提供面板，需手动配置启用面板后才可使用，参考：https://blog.vay1314.top/archives/196.html"  Type="Port"
+    Display="advanced" Required="true" Mask="false">5678</Config>
+  <WebUI>http://[IP]:[PORT:5678]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/jd-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
