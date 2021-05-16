@@ -45,10 +45,10 @@
     Mode="rw" Description="该目录将映射到容器中的 /data，用于持久化存储 VerySync 配置" Type="Path" 
     Display="advanced" Required="false" Mask="false">/mnt/user/appdata/verysync</Config>
   <Config Name="用户 ID" Target="PUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户" Type="Variable" 
+    Mode="" Description="运行 verysync 容器的用户" Type="Variable" 
     Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="用户组 ID" Target="GUID" Default="" 
-    Mode="" Description="运行 ddns 容器的用户组" Type="Variable" 
+    Mode="" Description="运行 verysync 容器的用户组" Type="Variable" 
     Display="advanced" Required="false" Mask="false">100</Config>
   <WebUI>http://[IP]:[PORT:8886]/</WebUI>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/verysync-icon.png</Icon>
