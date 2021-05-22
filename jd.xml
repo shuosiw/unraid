@@ -14,9 +14,9 @@
     自动玩耍京东的各种游戏
   </Overview>
   <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
-  <Registry>https://hub.docker.com/r/nevinee/jd</Registry>
+  <Registry>https://hub.docker.com/r/shuosiw/nevinee-jd-v4</Registry>
   <GitHub>https://github.com/shuosiw/unraid</GitHub>
-  <Repository>nevinee/jd:v4</Repository>
+  <Repository>shuosiw/nevinee-jd-v4</Repository>
   <Project>https://hub.docker.com/r/nevinee/jd</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
