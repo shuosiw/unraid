@@ -22,7 +22,7 @@
   <Project>https://github.com/fatedier/frp</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
-  <Network>br0</Network>
+  <Network>bridge</Network>
   <Shell>sh</Shell>
   <Config Name="用户 ID" Target="PUID" Default="" 
     Mode="" Description="运行 frpc 容器的用户" Type="Variable" 
