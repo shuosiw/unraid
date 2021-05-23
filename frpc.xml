@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/frpc.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>frpc</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。[br]
+    可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网[br]
+    frpc 是 frp 的客户端[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/fatedier/frp[br][br]
+  </Description>
+  <Overview>
+    frp 是一个专注于内网穿透的高性能的反向代理应用，frpc 作为部署在内网的客户端，用于连接外网 frps 服务端。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/snowdreamtech/frpc</Registry>
+  <GitHub>https://github.com/snowdreamtech/frp</GitHub>
+  <Repository>snowdreamtech/frpc:latest</Repository>
+  <Project>https://github.com/fatedier/frp</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>br0</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 frpc 容器的用户" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 frpc 容器的用户组" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="frpc 管理界面端口" Target="7400" Default="" 
+    Mode="tcp" Description="需要 frpc 配置 admin_addr、admin_port 以开启 frpc 管理界面端口"  Type="Port" 
+    Display="always" Required="true" Mask="false">7400</Config>
+  <Config Name="AppData 配置路径" Target="/etc/frp" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /etc/frp，用于持久化存储 frpc 配置" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/frp</Config>
+  <WebUI>http://[IP]:[PORT:7400]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/frpc-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
