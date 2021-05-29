@@ -1,6 +1,8 @@
 ### 签到
 
-本目录保存了一些自己整理的 PT 站点 qiandao 模板，全日志：
+#### 说明
+
+本目录保存了一些自己整理的 PT 站点 qiandao 模板：
 
 1. 基础签到或登录：
     * 对于需要进行的签到的站点，进行签到；
@@ -10,11 +12,49 @@
     * 上传量
     * 下载量
     * 分享率
-    * 签到状态（一般指获得多少魔力）
+    * 签到状态
+        * 需要签到的站点会提示签到已得多少魔力
+        * 不需要签到的站点则提示免签到
     * 做种数
-    * 做种体积
 
-本目录仅提供 har 文件，需要配合 https://github.com/shuosiw/unraid/blob/master/qiandao.xml 使用：
+#### 全日志
 
-1. 手动添加模板，上传 har 文件
-2. 将本目录作为模板库导入 qiandao 模板中
+这里收录的站点，均为个人调整适配过，获取对应站点全日志数据，对应案例如下：
+
+
+**免签到站点**
+
+```
+站点名-免签到：【用户名:{{name}}】【魔力值:{{ml}}】【分享率:{{fx}}】【上传量:{{sc}}】【下载量:{{xz}}】【做种数:{{zz}}】
+```
+
+**签到站点**
+
+```
+站点名-签到已得{{qd}}魔力：【用户名:{{name}}】【魔力值:{{ml}}】【分享率:{{fx}}】【上传量:{{sc}}】【下载量:{{xz}}】【做种数:{{zz}}】
+```
+
+#### 使用方式
+
+
+> 本目录仅提供 har 文件，需要配合 [Qiandao 框架](https://github.com/shuosiw/unraid/blob/master/qiandao.xml) 使用
+
+
+先找到 **我的模板**，点击 **+** 号进入 HAR 上传界面
+
+![添加模板](https://raw.githubusercontent.com/shuosiw/unraid/master/.assets/har1.jpg)
+
+找到保存在本地的 HAR 文件，选中并上传，等待上传完毕后点击 **保存** 即可
+
+![上传HAR](https://raw.githubusercontent.com/shuosiw/unraid/master/.assets/har2.jpg)
+
+最后回到首页，在 **我的签到** 点击 **+** 号来创建签到任务
+
+![创建任务](https://raw.githubusercontent.com/shuosiw/unraid/master/.assets/har3.jpg)
+
+这一步就需要输入身份认证信息了，常见的有以下两种：
+
+* cookie
+* 账号密码
+
+最后点击 **提交** 即可
