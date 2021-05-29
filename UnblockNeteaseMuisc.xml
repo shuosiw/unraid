@@ -21,17 +21,11 @@
   <Privileged>false</Privileged>
   <Network>br0</Network>
   <Shell>sh</Shell>
-  <Config Name="用户 ID" Target="PUID" Default="" 
-    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户" Type="Variable" 
-    Display="always" Required="false" Mask="false">99</Config>
-  <Config Name="用户组 ID" Target="GUID" Default="" 
-    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户组" Type="Variable" 
-    Display="always" Required="false" Mask="false">100</Config>
   <Config Name="强制最高音质" Target="UNM_FORCE_BEST" Default="on|off" 
     Mode="" Description="是否强制最高音质" Type="Variable" 
     Display="always" Required="false" Mask="false">on</Config>
   <Config Name="替换音乐链接" Target="UNM_REPLACE_URL" Default="on|off" 
-    Mode="" Description="是否替换音乐链接" Type="Variable" 
+    Mode="" Description="ios 客户端需要信任根证书且替换音乐连接" Type="Variable"
     Display="always" Required="false" Mask="false">off</Config>
   <Config Name="设置音源" Target="UNM_SERVER_SOURCE" Default="kuwo|migu|kugou" 
     Mode="" Description="设置替换的音源" Type="Variable" 
@@ -49,14 +43,23 @@
     Mode="" Description="从其他平台尝试搜索歌曲的次数，默认为 1 次" Type="Variable" 
     Display="always" Required="false" Mask="false">1</Config>
   <Config Name="自定义证书文件" Target="UNM_SERVER_CERT" Default="" 
-    Mode="" Description="指定自定义证书文件在容器中的绝对路径，需提前挂载至容器" Type="Variable" 
+    Mode="" Description="存放 /mnt/user/appdata/unblockneteasemusic 目录，并指定容器映射路径" Type="Variable"
     Display="always" Required="false" Mask="false"></Config>
   <Config Name="自定义证书 Key 文件" Target="UNM_SERVER_KEY" Default="" 
-    Mode="" Description="指定自定义证书 Key 文件在容器中的绝对路径，需提前挂载至容器" Type="Variable" 
+    Mode="" Description="存放 /mnt/user/appdata/unblockneteasemusic 目录，并指定容器映射路径" Type="Variable"
     Display="always" Required="false" Mask="false"></Config>
   <Config Name="日志文件路径" Target="UNM_LOG_FILE" Default="" 
-    Mode="" Description="设置日志文件路径，并将日志写入文件（不推荐）" Type="Variable" 
-    Display="always" Required="false" Mask="false"></Config>
+    Mode="" Description="设置日志文件路径，并将日志写入文件（不推荐）" Type="Variable"
+    Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户" Type="Variable"
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 UnblockNeteaseMuisc 容器的用户组" Type="Variable"
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="AppData 配置路径" Target="/root/app/config" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /root/app/config，用于持久化存储配置" Type="Path"
+    Display="advanced" Required="false" Mask="false">/mnt/user/appdata/unblockneteasemusic</Config>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/unblock-netease-music.png</Icon>
   <WebUI></WebUI>
   <ExtraParams></ExtraParams>
