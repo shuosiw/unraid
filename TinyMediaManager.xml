@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/TinyMediaManager.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>TinyMediaManager</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    tinyMediaManager，简称 tmm，是一款基于 Java 开发的影视资源信息管理工具，可以用来批量处理本地的影视资源，处理后就可以非常漂亮用海报墙的方式展示出来。[br]
+    因为是基于 Java 开发，本身就具有跨平台特性，支持 Windows、MacOS、Linux 等系统[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://www.tinymediamanager.org/[br][br]
+  </Description>
+  <Overview>
+    tinyMediaManager，简称 tmm，是一款基于 Java 开发的影视资源信息管理工具，可以用来批量处理本地的影视资源，处理后就可以非常漂亮用海报墙的方式展示出来。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/romancin/tinymediamanager</Registry>
+  <GitHub>https://github.com/romancin/tinymediamanager-docker</GitHub>
+  <Repository>romancin/tinymediamanager:latest</Repository>
+  <Project>https://www.tinymediamanager.org/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 tmm 容器的用户" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 tmm 容器的用户组" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="WebUI 端口" Target="5800" Default="" 
+    Mode="tcp" Description="设置端口支持通过浏览器访问进行管理"  Type="Port" 
+    Display="always" Required="true" Mask="false">5800</Config>
+  <Config Name="VNC 端口" Target="5900" Default="" 
+    Mode="tcp" Description="设置端口支持通过 VNC 访问进行管理"  Type="Port" 
+    Display="always" Required="true" Mask="false">5900</Config>
+  <Config Name="启用中文字体支持" Target="ENABLE_CJK_FONT" Default="0|1" 
+    Mode="" Description="1 表示启用中文字体支持，0 表示不启用" Type="Variable" 
+    Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="AppData 配置路径" Target="/config" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 tmm 配置" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/tinymediamanager</Config>
+  <Config Name="资源文件路径" Target="/media" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /media，用于进行资源刮削" Type="Path" 
+    Display="always" Required="true" Mask="false"></Config>
+  <WebUI>http://[IP]:[PORT:5800]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/tmm-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
