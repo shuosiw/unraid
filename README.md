@@ -14,6 +14,7 @@ UnRaid docker 模板库，目前支持的容器：
 |VerySync|微力同步|在多个设备上同步文件|
 |JD| JD 活动签到|自动玩耍 JD 的各种游戏|
 |Frpc| frp 客户端| 没有公网 ipv4 可能需要|
+|TinyMediaManager| 影视资源信息刮削工具| 简称 tmm|
 
 原则上仅添加 UnRaid 的 APP 社区中没有提供的容器，逐步适配ing
 
