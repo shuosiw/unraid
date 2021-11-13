@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/Qinglong.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>Qinglong</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    Qinglong(青龙)是一个支持python3、javaScript、shell、typescript 的定时任务管理面板。[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/whyour/qinglong[br][br]
+  </Description>
+  <Overview>
+    Qinglong(青龙)是一个支持python3、javaScript、shell、typescript 的定时任务管理面板。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/whyour/qinglong</Registry>
+  <GitHub>https://github.com/whyour/qinglong</GitHub>
+  <Repository>whyour/qinglong:latest</Repository>
+  <Project>https://github.com/whyour/qinglong</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 qinglong 的用户 ID" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行  qinglong 的用户组 ID" Type="Variable" 
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="WebUI 端口" Target="5700" Default="" 
+    Mode="tcp" Description="用于访问 Qinglong 面板 WebUI"  Type="Port" 
+    Display="always" Required="true" Mask="false">5700</Config>
+  <Config Name="config 路径" Target="/ql/config" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/config，用于持久化存储 qinglong 配置文件" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/config</Config>
+  <Config Name="log 路径" Target="/ql/log" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/log，用于持久化存储 qinglong 日志文件" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/log</Config>
+  <Config Name="db 路径" Target="/ql/db" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/db，用于持久化存储 qinglong 数据库文件" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/db</Config>
+  <Config Name="repo 路径" Target="/ql/repo" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/repo，用于持久化存储脚本仓库" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/repo</Config> 
+  <Config Name="raw 路径" Target="/ql/raw" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/raw，用于持久化存储原始脚本文件" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/raw</Config>
+  <Config Name="scripts 路径" Target="/ql/scripts" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/scripts，用于持久化存储脚本文件" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/scripts</Config>
+  <Config Name="jbot 路径" Target="/ql/jbot" Default="" 
+    Mode="rw" Description="该目录将映射到容器中的 /ql/jbot，用于持久化存储机器人相关配置" Type="Path" 
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/jbot</Config>
+  <WebUI>http://[IP]:[PORT:5700]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/qinglong-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
