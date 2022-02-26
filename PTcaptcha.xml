@@ -9,29 +9,41 @@
     pt_captcha，即 PT 验证码识别工具，是根据百度和腾讯文字识别 API 实现，用于部分站点的自动签到验证码填写。[br]
     需要获取百度智能云和腾讯云 OCR 的 APIKey 和 SecretKey，作为参数与图片数据一同传入[br][br]
     [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
-    https://registry.hub.docker.com/r/sean0/pt_captcha[br][br]
+    https://github.com/shuosiw/pt_captcha[br][br]
   </Description>
   <Overview>
     pt_captcha，封装了腾讯/百度的 OCR 接口，提供了验证码识别 API，用于部分站点的自动识别。
   </Overview>
   <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
-  <Registry>https://registry.hub.docker.com/r/sean0/pt_captcha</Registry>
-  <GitHub>https://registry.hub.docker.com/r/sean0/pt_captcha</GitHub>
-  <Repository>sean0/pt_captcha:latest</Repository>
-  <Project>https://registry.hub.docker.com/r/sean0/pt_captcha</Project>
+  <Registry>https://registry.hub.docker.com/r/shuosiw/pt_captcha</Registry>
+  <GitHub>https://github.com/shuosiw/pt_captcha</GitHub>
+  <Repository>shuosiw/pt_captcha:latest</Repository>
+  <Project>https://registry.hub.docker.com/r/shuosiw/pt_captcha</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Network>bridge</Network>
-  <Shell>bash</Shell>
+  <Shell>sh</Shell>
   <Config Name="用户 ID" Target="PUID" Default="" 
     Mode="" Description="运行 pt_captcha 容器的用户" Type="Variable" 
     Display="advanced" Required="false" Mask="false">99</Config>
-  <Config Name="用户组 ID" Target="GUID" Default="" 
+  <Config Name="用户组 ID" Target="GUID" Default=""
     Mode="" Description="运行 pt_captcha 容器的用户组" Type="Variable" 
     Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="pt_captcha api 端口" Target="5000" Default="" 
     Mode="tcp" Description="映射到容器的 5000 端口，用于提供验证码识别 http api"  Type="Port" 
     Display="always" Required="true" Mask="false">5000</Config>
+  <Config Name="OCR 服务提供方" Target="OCR_VENDOR" Default="baidu|tencent"
+    Mode="" Description="后续验证码图片识别将调用该提供方的 api 进行识别" Type="Variable"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="apikey" Target="API_KEY" Default=""
+    Mode="" Description="如果使用 baidu 则对应账号 API Key；如果使用 tencent 则对应账号 SecretId" Type="Variable"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="secret" Target="SECRET_KEY" Default=""
+    Mode="" Description="如果使用 baidu 则对应账号 Secret Key；如果使用 tencent 则对应账号 SecretKey" Type="Variable"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="调用服务所在区域" Target="API_REGION" Default="ap-guangzhou|ap-beijing|ap-shanghai|ap-hongkong|na-toronto"
+    Mode="" Description="仅使用 tencent 时生效" Type="Variable"
+    Display="advanced" Required="false" Mask="false">ap-guangzhou</Config>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/ptcaptcha-icon.png</Icon>
   <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
   <PostArgs></PostArgs>
