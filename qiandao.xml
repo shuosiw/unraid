@@ -16,7 +16,7 @@
   <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
   <Registry>https://hub.docker.com/r/asdaragon/qiandao</Registry>
   <GitHub>https://github.com/AragonSnow/qiandao</GitHub>
-  <Repository>asdaragon/qiandao:latest</Repository>
+  <Repository>asdaragon/qiandao:20210222</Repository>
   <Project>https://github.com/AragonSnow/qiandao</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
