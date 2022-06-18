@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/Qinglong.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>Qinglong</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    NasTools 是一个 NAS 媒体库资源归集整理工具。[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/jxxghp/nas-tools/wiki[br][br]
+  </Description>
+  <Overview>
+    NasTools 是一个 NAS 媒体库资源归集整理工具。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/jxxghp/nas-tools</Registry>
+  <GitHub>https://github.com/jxxghp/nas-tools</GitHub>
+  <Repository>jxxghp/nas-tools:latest</Repository>
+  <Project>https://github.com/jxxghp/nas-tools</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 nas-tools 的用户 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行  nas-tools 的用户组 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="用户掩码权限" Target="UMASK" Default=""
+    Mode="" Description="用于设置用户掩码权限，如熟悉 linux 权限建议设置 022" Type="Variable"
+    Display="advanced" Required="false" Mask="false">000</Config>
+  <Config Name="WebUI 端口" Target="3000" Default=""
+    Mode="tcp" Description="用于访问 nas-tools 管理界面"  Type="Port"
+    Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="config 路径" Target="/config" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 nas-tools 配置文件" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/nas-tools/config</Config>
+  <Config Name="是否自动更新" Target="NASTOOL_AUTO_UPDATE" Default="false|true"
+    Mode="" Description="如需在启动容器时自动升级程程序请设置为 true" Type="Variable"
+    Display="always" Required="true" Mask="false">false</Config>
+  <Config Name="媒体文件目录" Target="/movies" Default=""
+    Mode="rw" Description="默认映射到容器中的 /movies 目录，可自行修改，如有多个媒体目录需映射请自行添加" Type="Path"
+    Display="always" Required="true" Mask="false"></Config>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/nastools-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
