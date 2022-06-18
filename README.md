@@ -17,6 +17,7 @@ UnRaid docker 模板库，目前支持的容器：
 | TinyMediaManager | 影视资源信息刮削工具 | 简称 tmm |
 | Qinglong | 青龙控制面板 | 定时任务框架 |
 | PTcaptcha | 验证码自动识别 | 通常用于带验证码的 PT 签到 |
+| NasTools | NAS 媒体库资源归集整理工具 | 追剧必备 |
 
 原则上仅添加 UnRaid 的 APP 社区中没有提供的容器，逐步适配ing
 

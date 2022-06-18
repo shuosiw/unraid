@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <Container>
-  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/Qinglong.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/NasTools.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>Cloud: Network:Web Tools:</Category>
-  <Name>Qinglong</Name>
+  <Name>NasTools</Name>
   <Description>
     [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
     NasTools 是一个 NAS 媒体库资源归集整理工具。[br][br]
