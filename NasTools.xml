@@ -40,8 +40,11 @@
   <Config Name="是否自动更新" Target="NASTOOL_AUTO_UPDATE" Default="false|true"
     Mode="" Description="如需在启动容器时自动升级程程序请设置为 true" Type="Variable"
     Display="always" Required="true" Mask="false">false</Config>
-  <Config Name="媒体文件目录" Target="/movies" Default=""
-    Mode="rw" Description="默认映射到容器中的 /movies 目录，可点击 EDIT 自行修改，如有多个媒体目录需映射请自行添加" Type="Path"
+  <Config Name="媒体目录（硬链接目录）" Target="/media" Default=""
+    Mode="rw" Description="将宿主上硬链接目标目录映射到容器中的 /media，可点击 EDIT 自行修改，如有多个目录需映射请自行添加" Type="Path"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="下载目录（非 tr 容器中的目录）" Target="/download" Default=""
+    Mode="rw" Description="将宿主上的下载目录映射到容器中的 /download 目录，可点击 EDIT 自行修改，如有多个目录需映射请自行添加" Type="Path"
     Display="always" Required="true" Mask="false"></Config>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/nastools-icon.png</Icon>
