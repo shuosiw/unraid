@@ -41,7 +41,7 @@
     Mode="" Description="如需在启动容器时自动升级程程序请设置为 true" Type="Variable"
     Display="always" Required="true" Mask="false">false</Config>
   <Config Name="目录映射" Target="/mnt" Default=""
-    Mode="rw" Description="将宿主目录映射到容器中的 /mnt，可点击 EDIT 自行修改[br]如有多个目录需映射请点击下方 Add another Path 添加 Path 类型配置" Type="Path"
+    Mode="rw" Description="将宿主目录映射到容器中的 /mnt，可点击 EDIT 自行修改；如有多个目录需映射请点击下方 Add another Path 添加 Path 类型配置" Type="Path"
     Display="always" Required="true" Mask="false"></Config>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <Icon>https://github.com/shuosiw/unraid/raw/master/images/nastools-icon.png</Icon>
