@@ -30,10 +30,10 @@
     Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="WebUI 端口" Target="19035" Default=""
     Mode="tcp" Description="用于访问 ChineseSubFinder 面板 WebUI"  Type="Port"
-    Display="always" Required="true" Mask="false"19035/Config>
+    Display="always" Required="true" Mask="false">19035</Config>
   <Config Name="读取图片端口" Target="19037" Default=""
     Mode="tcp" Description="WebUI 的视频列表读取图片用，务必设置不要暴露到外网"  Type="Port"
-    Display="always" Required="true" Mask="false"19037/Config>
+    Display="always" Required="true" Mask="false">19037</Config>
   <Config Name="config 路径" Target="/config" Default=""
     Mode="rw" Description="该目录将映射到容器中的 /media，用于持久化存储 ChineseSubFinder 配置文件" Type="Path"
     Display="always" Required="false" Mask="false">/mnt/user/appdata/ChineseSubFinder</Config>
