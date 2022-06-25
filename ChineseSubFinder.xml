@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/ChineseSubFinder.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>ChineseSubFinder</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    ChineseSubFinder 用于自动化搞定限定条件下中文字幕下载。[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/allanpk716/ChineseSubFinder[br][br]
+  </Description>
+  <Overview>
+    ChineseSubFinder 用于自动化搞定限定条件下中文字幕下载。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/allanpk716/chinesesubfinder</Registry>
+  <GitHub>https://github.com/allanpk716/ChineseSubFinder</GitHub>
+  <Repository>allanpk716/chinesesubfinder:latest</Repository>
+  <Project>https://github.com/allanpk716/ChineseSubFinder</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 ChineseSubFinder 的用户 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 ChineseSubFinder 的用户组 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="WebUI 端口" Target="19035" Default=""
+    Mode="tcp" Description="用于访问 ChineseSubFinder 面板 WebUI"  Type="Port"
+    Display="always" Required="true" Mask="false"19035/Config>
+  <Config Name="读取图片端口" Target="19037" Default=""
+    Mode="tcp" Description="WebUI 的视频列表读取图片用，务必设置不要暴露到外网"  Type="Port"
+    Display="always" Required="true" Mask="false"19037/Config>
+  <Config Name="config 路径" Target="/config" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /media，用于持久化存储 ChineseSubFinder 配置文件" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ChineseSubFinder</Config>
+  <Config Name="媒体目录" Target="/media" Default=""
+    Mode="rw" Description="指定需要下载中文字幕的媒体目录，通常就是映射 jellyfin/emby/plex 的目录" Type="Path"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="浏览器缓存" Target="/root/.cache/rod/browser" Default=""
+    Mode="rw" Description="仅对 latest 标签的容器生效，用于持久化 chrome 避免容器重启后需再次下载" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/ChineseSubFinder/browser</Config>
+  <Config Name="是否重设 /media 权限" Target="PERMS" Default="true|false"
+    Mode="" Description="是否调整映射到容器中的媒体文件目录权限" Type="Variable"
+    Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="用户掩码权限" Target="UMASK" Default=""
+    Mode="" Description="用于设置用户掩码权限，建议设置 022" Type="Variable"
+    Display="advanced" Required="false" Mask="false">022</Config>
+  <WebUI>http://[IP]:[PORT:19035]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/chinesesubfinder-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
