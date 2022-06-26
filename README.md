@@ -18,6 +18,7 @@ UnRaid docker 模板库，目前支持的容器：
 | Qinglong | 青龙控制面板 | 定时任务框架 |
 | PTcaptcha | 验证码自动识别 | 通常用于带验证码的 PT 签到 |
 | NasTools | NAS 媒体库资源归集整理工具 | 追剧必备 |
+| ChineseSubFinder | 电影、剧集中文字幕自动匹配下载工具 | 外语片利器 |
 
 原则上仅添加 UnRaid 的 APP 社区中没有提供的容器，逐步适配ing
 
@@ -27,6 +28,35 @@ UnRaid docker 模板库，目前支持的容器：
 
 
 #### 添加模板库
+
+##### Unraid 6.10.x 版本
+
+Unraid 6.10 版本已经去掉模版仓库功能，详见：[UNRAID OS VERSION 6.10.0-RC1 AVAILABLE](https://forums.unraid.net/bug-reports/prereleases/unraid-os-version-6100-rc1-available-r1514/?tab=comments#comment-15110)
+
+> If you're one of the (very rare) users who still leverages the Template Repositories section, this has been entirely removed
+
+针对 6.10.x 版本，可通过以下方式使用：
+
+1. 打开 Unraid 终端，执行以下命令：
+
+    ```
+    mkdir -p /config/plugins/dockerMan/templates-user;
+    cd /config/plugins/dockerMan/templates-user;
+    wget -qO- https://github.com/shuosiw/unraid/archive/refs/tags/1.0.0.tar.gz | tar -zxf - ;
+    mv unraid-1.0.0/*.xml ./
+    ```
+
+2. 刷新 Unraid 管理后台浏览器页面（比如 Windows 按 F5 刷新）
+3. 参考下方**添加容器**来使用，导入的模版会存在于 `User templates` 分类中，见下方截图
+
+
+(https://raw.githubusercontent.com/shuosiw/unraid/master/.assets/add-unraid-docker-template7.png)
+
+
+_不过这样操作也会混入你已经安装的其他的容器应用，但不会影响到已有的容器_
+
+
+##### Unraid 6.9.x 及以下版本
 
 打开 unraid 的 docker 页面：
 
