@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/shuosiw/unraid/master/MDC-NG.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>MDC-NG</Name>
+  <Description>
+    [b][u][span style='color: #E80000;']应用介绍[/span][/u][/b][br]
+    MDC-N(ext)G(eneration) Yet another Movie Data Capture tool.[br][br]
+    [b][u][span style='color: #E80000;']文档介绍[/span][/u][/b][br]
+    https://github.com/mdc-ng/mdc-ng[br][br]
+  </Description>
+  <Overview>
+    MDC-NG 你的次世代xx库管理方案。
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45838.0</Support>
+  <Registry>https://hub.docker.com/r/mdcng/mdc</Registry>
+  <GitHub>https://github.com/mdc-ng/mdc-ng</GitHub>
+  <Repository>mdcng/mdc:latest</Repository>
+  <Project>https://github.com/mdc-ng/mdc-ng</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Config Name="用户 ID" Target="PUID" Default="" 
+    Mode="" Description="运行 MDC-NG 的用户 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="用户组 ID" Target="GUID" Default="" 
+    Mode="" Description="运行 MDC-NG 的用户组 ID" Type="Variable"
+    Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="WebUI 端口" Target="9208" Default=""
+    Mode="tcp" Description="用于访问 MDC-NG 面板 WebUI"  Type="Port"
+    Display="always" Required="true" Mask="false">9208</Config>
+  <Config Name="config 路径" Target="/config" Default=""
+    Mode="rw" Description="该目录将映射到容器中的 /config，用于持久化存储 MDC-NG 配置文件" Type="Path"
+    Display="always" Required="false" Mask="false">/mnt/user/appdata/MDC-NG</Config>
+  <Config Name="媒体目录" Target="/media" Default=""
+    Mode="rw" Description="媒体目录，通常就是映射存放 xxx 适配文件的目录" Type="Path"
+    Display="always" Required="true" Mask="false"></Config>
+  <Config Name="用户掩码权限" Target="UMASK" Default=""
+    Mode="" Description="用于设置用户掩码权限，建议设置 022" Type="Variable"
+    Display="advanced" Required="false" Mask="false">022</Config>
+  <WebUI>http://[IP]:[PORT:9208]/</WebUI>
+  <Icon>https://github.com/shuosiw/unraid/raw/master/images/MDC-NG-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <DonateImg></DonateImg>
+</Container>
